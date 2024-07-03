@@ -1,0 +1,158 @@
+﻿/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 30px;
+}
+
+/* Set widths on the form inputs since otherwise they're 100% wide */
+input,
+select,
+textarea {
+    max-width: 280px;
+    height: 25px;
+}
+
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+    .jumbotron {
+        margin-top: 20px;
+    }
+
+    .body-content {
+        padding: 0;
+        margin-top: 30px;
+    }
+}
+
+.navbar ul li a {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    color: #0075bd !important;
+    font-weight: bold;
+}
+
+.navbar ul li a:hover {
+    color: #00adef !important;
+}
+
+.navbar-inverse .navbar-toggle:hover,
+.navbar-inverse .navbar-toggle:focus {
+    background-color: #777;
+    border-color: #fff
+}
+
+.image-logo {
+    width: 180px;
+    margin-top: -10px;
+    padding-right: 15px;
+}
+
+.navbar-inverse {
+    background-color: #FFF !important;
+}
+
+#carrossel {
+    float: left;
+    width: 100%;
+    overflow: hidden;
+    height: 300px;
+}
+
+#carrossel div img {
+    width: 100%;
+}
+
+#menu-carrossel {
+    float: left;
+    clear: both;
+    width: 100%;
+    text-align: center;
+}
+
+.filmes {
+    width: 100%;
+}
+
+.fig {
+    width: 100%;
+}
+
+.campo-contato {
+    padding-top: 15px;
+}
+
+.campo-contato input {
+    width: 250px;
+}
+
+.campo-contato textarea {
+    width: 250px;
+}
+
+.botao-contato {
+    padding-top: 15px;
+}
+
+.bloco-loja {
+    padding-top: 15px;
+}
+
+.bloco-vaga {
+    padding-top: 15px;
+}
+
+.sobre-video {
+    width: 100%;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.colecao {
+    width: 100%;
+}
+
+.colecao-item {
+    display: inline-flex;
+    padding-top: 50px;
+    width: 49%;
+}
+
+.colecao-item-texto {
+  
+}
+
+.colecao-item-img {
+    width: 150px;
+}
+
+.colecao-item-img img {
+    width: 117px;
+    height: 117px;
+}
+
+.pesquisa {
+    display: inline-flex;
+}
+
+.pesquisa-campo {
+    padding-right: 25px;
+}
+
+.pesquisa-botao {
+    text-align: right;
+    margin-top: 20px;
+}
+
+.compre-aqui {
+    width: 65px;
+}
+

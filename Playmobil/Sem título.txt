@@ -1,0 +1,22 @@
+
+Senha - admin1 / Abcd1234@
+
+
+Affiliation - Escola
+Learner - Estudante
+Instructor - Instrutor
+Course - Curso
+Section - Seção
+Enrollment - Matrícula
+
+
+Criar uma affiliation
+Criar 2 estudantes
+criar 1 professor
+criar 2 cursos (com 1 seção cada)
+Matricular os alunos em diversos cursos
+Completar algum dos enrollments
+Logar no painel (Login as user ou tela de login) dos alunos e ver se os cursos aparecem em ACTIVE COURSES
+
+
+

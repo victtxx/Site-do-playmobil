@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PlaymobilModelStoreContainer" CdmEntityContainer="PlaymobilEntities1">
+    <EntitySetMapping Name="Loja">
+      <EntityTypeMapping TypeName="PlaymobilModel.Loja">
+        <MappingFragment StoreEntitySet="Loja">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Endereco" ColumnName="Endereco" />
+          <ScalarProperty Name="Telefone" ColumnName="Telefone" />
+          <ScalarProperty Name="Funcionamento" ColumnName="Funcionamento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vaga">
+      <EntityTypeMapping TypeName="PlaymobilModel.Vaga">
+        <MappingFragment StoreEntitySet="Vaga">
+          <ScalarProperty Name="DataExpiracao" ColumnName="DataExpiracao" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Remuneracao" ColumnName="Remuneracao" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ColecaoItem">
+      <EntityTypeMapping TypeName="PlaymobilModel.ColecaoItem">
+        <MappingFragment StoreEntitySet="ColecaoItem">
+          <ScalarProperty Name="JaTenho" ColumnName="JaTenho" />
+          <ScalarProperty Name="LinkCompra" ColumnName="LinkCompra" />
+          <ScalarProperty Name="Imagem" ColumnName="Imagem" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="Serie" ColumnName="Serie" />
+          <ScalarProperty Name="Item" ColumnName="Item" />
+          <ScalarProperty Name="Colecao" ColumnName="Colecao" />
+          <ScalarProperty Name="Marca" ColumnName="Marca" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

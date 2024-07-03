@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PlaymobilModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Loja">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nome" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Endereco" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Telefone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Funcionamento" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="PlaymobilEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Loja" EntityType="Self.Loja" />
+    <EntitySet Name="Vaga" EntityType="PlaymobilModel.Vaga" />
+    <EntitySet Name="ColecaoItem" EntityType="PlaymobilModel.ColecaoItem" />
+  </EntityContainer>
+  <EntityType Name="Vaga">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Nome" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Descricao" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Remuneracao" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DataExpiracao" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="ColecaoItem">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Marca" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Colecao" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Item" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Serie" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Descricao" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Imagem" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="LinkCompra" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="JaTenho" Type="Boolean" />
+  </EntityType>
+</Schema>

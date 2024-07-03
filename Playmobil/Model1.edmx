@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="PlaymobilModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ColecaoItem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Marca" Type="nvarchar" MaxLength="255" />
+          <Property Name="Colecao" Type="nvarchar" MaxLength="255" />
+          <Property Name="Item" Type="nvarchar" MaxLength="255" />
+          <Property Name="Serie" Type="nvarchar" MaxLength="255" />
+          <Property Name="Descricao" Type="nvarchar(max)" />
+          <Property Name="Imagem" Type="nvarchar" MaxLength="500" />
+          <Property Name="LinkCompra" Type="nvarchar(max)" />
+          <Property Name="JaTenho" Type="bit" />
+        </EntityType>
+        <EntityType Name="Loja">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="nvarchar(max)" />
+          <Property Name="Endereco" Type="nvarchar(max)" />
+          <Property Name="Telefone" Type="nvarchar(max)" />
+          <Property Name="Funcionamento" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Vaga">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Descricao" Type="varchar" MaxLength="100" />
+          <Property Name="Remuneracao" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="DataExpiracao" Type="datetime" />
+        </EntityType>
+        <EntityContainer Name="PlaymobilModelStoreContainer">
+          <EntitySet Name="ColecaoItem" EntityType="Self.ColecaoItem" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Loja" EntityType="Self.Loja" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vaga" EntityType="Self.Vaga" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PlaymobilModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Loja">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Endereco" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Telefone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Funcionamento" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="PlaymobilEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Loja" EntityType="Self.Loja" />
+          <EntitySet Name="Vaga" EntityType="PlaymobilModel.Vaga" />
+          <EntitySet Name="ColecaoItem" EntityType="PlaymobilModel.ColecaoItem" />
+        </EntityContainer>
+        <EntityType Name="Vaga">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Nome" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Descricao" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Remuneracao" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DataExpiracao" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="ColecaoItem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Marca" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Colecao" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Item" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Serie" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Descricao" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Imagem" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="LinkCompra" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="JaTenho" Type="Boolean" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PlaymobilModelStoreContainer" CdmEntityContainer="PlaymobilEntities1">
+          <EntitySetMapping Name="Loja">
+            <EntityTypeMapping TypeName="PlaymobilModel.Loja">
+              <MappingFragment StoreEntitySet="Loja">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Endereco" ColumnName="Endereco" />
+                <ScalarProperty Name="Telefone" ColumnName="Telefone" />
+                <ScalarProperty Name="Funcionamento" ColumnName="Funcionamento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vaga">
+            <EntityTypeMapping TypeName="PlaymobilModel.Vaga">
+              <MappingFragment StoreEntitySet="Vaga">
+                <ScalarProperty Name="DataExpiracao" ColumnName="DataExpiracao" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Remuneracao" ColumnName="Remuneracao" />
+                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ColecaoItem">
+            <EntityTypeMapping TypeName="PlaymobilModel.ColecaoItem">
+              <MappingFragment StoreEntitySet="ColecaoItem">
+                <ScalarProperty Name="JaTenho" ColumnName="JaTenho" />
+                <ScalarProperty Name="LinkCompra" ColumnName="LinkCompra" />
+                <ScalarProperty Name="Imagem" ColumnName="Imagem" />
+                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+                <ScalarProperty Name="Serie" ColumnName="Serie" />
+                <ScalarProperty Name="Item" ColumnName="Item" />
+                <ScalarProperty Name="Colecao" ColumnName="Colecao" />
+                <ScalarProperty Name="Marca" ColumnName="Marca" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

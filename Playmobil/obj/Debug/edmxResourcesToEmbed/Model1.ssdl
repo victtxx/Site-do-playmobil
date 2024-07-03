@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PlaymobilModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ColecaoItem">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Marca" Type="nvarchar" MaxLength="255" />
+    <Property Name="Colecao" Type="nvarchar" MaxLength="255" />
+    <Property Name="Item" Type="nvarchar" MaxLength="255" />
+    <Property Name="Serie" Type="nvarchar" MaxLength="255" />
+    <Property Name="Descricao" Type="nvarchar(max)" />
+    <Property Name="Imagem" Type="nvarchar" MaxLength="500" />
+    <Property Name="LinkCompra" Type="nvarchar(max)" />
+    <Property Name="JaTenho" Type="bit" />
+  </EntityType>
+  <EntityType Name="Loja">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="nvarchar(max)" />
+    <Property Name="Endereco" Type="nvarchar(max)" />
+    <Property Name="Telefone" Type="nvarchar(max)" />
+    <Property Name="Funcionamento" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Vaga">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Descricao" Type="varchar" MaxLength="100" />
+    <Property Name="Remuneracao" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="DataExpiracao" Type="datetime" />
+  </EntityType>
+  <EntityContainer Name="PlaymobilModelStoreContainer">
+    <EntitySet Name="ColecaoItem" EntityType="Self.ColecaoItem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Loja" EntityType="Self.Loja" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Vaga" EntityType="Self.Vaga" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
